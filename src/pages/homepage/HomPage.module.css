@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.homePage {
+  max-width: 1400px;
+  width: 100%;
+  height: 100vh;
+  background: rgb(39, 16, 88);
+  background: linear-gradient(
+    120deg,
+    rgb(24, 11, 69) 0%,
+    rgb(79, 14, 38) 36%,
+    rgb(80, 67, 145) 70%,
+    rgb(53, 11, 80) 92%
+  );
+}
+.homePage__container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 20px;
+
+  align-items: center;
+}
+.homePage__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 40px;
+  background: linear-gradient(
+    90deg,
+    rgba(248, 210, 97, 1),
+    rgba(249, 136, 104, 1),
+    rgba(243, 94, 159, 1),
+    rgba(192, 119, 227, 1),
+    rgba(248, 210, 97, 1),
+    rgba(249, 136, 104, 1),
+    rgba(243, 94, 159, 1)
+  );
+}
+.homePage__container button {
+  width: 120px;
+  height: 60px;
+
+  border-radius: 100px;
+  background: linear-gradient(
+    120deg,
+    rgba(194, 180, 243, 0.896) 10%,
+    rgba(237, 207, 218, 0.821) 36%,
+    rgba(200, 193, 234, 0.823) 70%,
+    rgba(225, 198, 242, 0.788) 72%
+  );
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+.homePage__link {
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(246, 228, 195);
+}
