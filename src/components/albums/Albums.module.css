@@ -1,7 +1,7 @@
 .Albums__wrapper {
   max-width: 1400px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   background: linear-gradient(
     120deg,
@@ -13,13 +13,15 @@
 .Albums__container {
   max-width: 1200px;
   width: 100%;
+  /* text-align: center;
+  align-items: center; */
 }
 
 .Albums__title {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 4vw;
   font-weight: 600;
 }
 .Albums__back {
@@ -54,21 +56,24 @@
 .Albums__inputs {
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
   gap: 50px;
 }
 .Albums__ul {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
 }
 
 .Albums__paginations {
   display: flex;
-
+  gap: 10px;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .Albums__paginations button {
@@ -82,21 +87,23 @@
 }
 
 .Albums__filter input {
-  width: 600px;
-  height: 70px;
+  width: 50vw;
+  height: 10vh;
   border-radius: 50px;
   border: none;
+  font-size: 4vh;
 }
 .Albums__add input {
-  width: 500px;
-  height: 70px;
+  width: 40vw;
+  height: 10vh;
   border-radius: 140px;
   border: none;
+  font-size: 4vh;
 }
 
 .Albums__add button {
-  width: 120px;
-  height: 70px;
+  width: 15vw;
+  height: 10vh;
   border-radius: 100px;
   border: none;
 }
@@ -107,8 +114,48 @@
   border: none;
 }
 
-.Albums__photos {
+/* .Albums__photos {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+} */
+
+.photolist__container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.photos__container {
+  width: 200px;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photos__photo {
+  width: 250px;
+  height: 150px;
+
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px; */
+}
+
+.photos__title {
+  font-size: 1vw;
+  display: flex;
+  flex-wrap: wrap;
+  width: 150px;
+  height: 80px;
+}
+/* .photolist__photo {
+  display: flex;
+} */
+.photolist__container {
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px; */
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
 }

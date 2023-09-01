@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Post from "../../components/post/Post";
-import Albums from "../../components/albums/Albums";
-import Album from "../../components/album/Album";
 import style from "./HomPage.module.css";
 
 function HomePage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleBurgerMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className={style.homePage}>
       <div className={style.homePage__header}>
@@ -13,7 +16,15 @@ function HomePage() {
           <h1>Welcome to the Homepage</h1>
         </div>
 
-        <div className={style.homePage__container}>
+        <button className={style.burgerMenu} onClick={handleBurgerMenuClick}>
+          ☰
+        </button>
+
+        <div
+          className={`${style.homePage__container} ${
+            isMenuOpen ? style.show : ""
+          }`}
+        >
           <button>
             <Link className={style.homePage__link} to="/Post">
               Пости

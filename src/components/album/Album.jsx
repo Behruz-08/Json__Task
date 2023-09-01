@@ -31,22 +31,7 @@ function Album() {
           `https://jsonplaceholder.typicode.com/photos?albumId=${selectedAlbumId}`
         )
         .then((response) => {
-          setPhotos(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }, [selectedAlbumId]);
-
-  useEffect(() => {
-    if (selectedAlbumId) {
-      axios
-        .get(
-          `https://jsonplaceholder.typicode.com/photos?albumId=${selectedAlbumId}`
-        )
-        .then((response) => {
-          setSelectedAlbumPhotos(response.data); // Здесь используем setSelectedAlbumPhotos для установки полученного массива фотографий в состояние
+          setSelectedAlbumPhotos(response.data);
         })
         .catch((error) => {
           console.log(error);
@@ -69,7 +54,7 @@ function Album() {
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
-    setCurrentPage(1); // Reset current page when search term changes
+    setCurrentPage(1);
   };
 
   const filteredAlbums = albums.filter((album) =>
@@ -120,6 +105,7 @@ function Album() {
         <h2>Pagination</h2>
         {renderPaginationButtons()}
       </div>
+
       {selectedAlbumId && (
         <div>
           {selectedAlbumPhotos.map((photo) => (

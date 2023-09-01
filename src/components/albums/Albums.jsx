@@ -22,7 +22,7 @@ function Albums() {
             `https://jsonplaceholder.typicode.com/albums?page=${currentPage}`
           ),
           axios.get(
-            `https://jsonplaceholder.typicode.com/photos?_limit=${albumsPerPage}`
+            `https://jsonplaceholder.typicode.com/photos?_limit=${albumsPerPage}&_page=${currentPage}`
           ),
         ]);
         setAlbums(albumsResponse.data);
@@ -80,7 +80,6 @@ function Albums() {
         <div className={style.Albums__back}>
           <button>
             <Link className={style.Albums__link} to="/">
-              {" "}
               Назад
             </Link>
           </button>
@@ -109,11 +108,7 @@ function Albums() {
             </div>
 
             <div className={style.Albums__photos}>
-              <AlbumList
-                className={style.Albums__photos}
-                albums={filteredAlbums}
-                photos={photos}
-              />
+              <AlbumList albums={filteredAlbums} photos={photos} />
             </div>
 
             <div className={style.Albums__paginations}>
@@ -138,18 +133,26 @@ function Albums() {
 
 function AlbumList({ albums, photos }) {
   return albums.map((album) => (
-    <div key={album.id}>
-      {/* <h3>{album.title}</h3> */}
-      <PhotoList
-        photos={photos.filter((photo) => photo.albumId === album.id)}
-      />
+    <div key={album.id} className={style.photolist__photo}>
+      <div className={style.photolist__container}>
+        <PhotoList
+          photos={photos.filter((photo) => photo.albumId === album.id)}
+        />
+      </div>
     </div>
   ));
 }
 
 function PhotoList({ photos }) {
   return photos.map((photo) => (
-    <img key={photo.id} src={photo.thumbnailUrl} alt={photo.title} />
+    <div className={style.photos__container} key={photo.id}>
+      <div className={style.photos__photo}>
+        <img src={photo.thumbnailUrl} alt={photo.title} />
+      </div>
+      <div className={style.photos__title}>
+        <p>{photo.title}</p>
+      </div>
+    </div>
   ));
 }
 
