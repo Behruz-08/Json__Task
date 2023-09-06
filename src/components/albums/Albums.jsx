@@ -41,9 +41,14 @@ function Albums() {
     setCurrentPage(pageNumber);
   };
 
+
+
   const handleFilterChange = (event) => {
-    setFilter(event.target.value);
+    const value = event.target.value.toLowerCase();
+    setFilter(value);
   };
+
+
 
   const handleNewAlbumChange = (event) => {
     setNewAlbum(event.target.value);
