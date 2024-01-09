@@ -8,7 +8,7 @@ const Post = () => {
     axios
       .get("https://jsonplaceholder.typicode.com/posts")
       .then((response) => {
-        setPosts(response.data);
+        setPosts(...posts,response.data);
       })
       .catch((error) => {
         console.log(error);
